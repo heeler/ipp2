@@ -32,11 +32,11 @@ class JobsTable:
 
     def print(self):
         pp = pprint.PrettyPrinter(indent=4)
-        pp.pprint self.m_data
+        pp.pprint(self.m_data)
         pass
 
 
-if __main__:
+if __name__ == "main":
     jp = json.loads('{"data_dir": "./data/handoff-production"')
     jt = JobsTable(jp)
     jt.collect_csv_files()
