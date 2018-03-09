@@ -2,6 +2,7 @@
 import json
 import glob
 import pandas as pd
+import pprint
 
 class JobsTable:
     """
@@ -30,7 +31,8 @@ class JobsTable:
         self.m_data = pd.concat(self.m_data)
 
     def print(self):
-        print self.m_data
+        pp = pprint.PrettyPrinter(indent=4)
+        pp.pprint self.m_data
         pass
 
 
