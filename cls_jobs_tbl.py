@@ -1,4 +1,5 @@
 
+import json
 import glob
 import pandas as pd
 
@@ -27,4 +28,15 @@ class JobsTable:
             self.m_data.append(data_tmp)
 
         self.m_data = pd.concat(self.m_data)
+
+    def print(self):
+        print self.m_data
+        pass
+
+
+if __main__:
+    jp = json.loads('{"data_dir": "./data/handoff-production"')
+    jt = JobsTable(jp)
+    jt.collect_csv_files()
+    jt.print()
 
